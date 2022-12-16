@@ -33,7 +33,10 @@ class StoreTransactionRequest extends FormRequest
     return [
       'description' => 'required|string|max:1000',
       'user_id' => 'exists:users,id',
-      'amount' => 'required|decimal',
+      'payor_payee' => 'string|max:100',
+      'amount' => 'required|numeric',
+      'date' => 'required|date',
+      'time' => 'required|date_format:H:i',
     ];
   }
 }
