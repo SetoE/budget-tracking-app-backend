@@ -31,6 +31,7 @@ class StoreTransactionRequest extends FormRequest
   public function rules()
   {
     return [
+      'name' => 'required|string|max:100',
       'description' => 'required|string|max:1000',
       'user_id' => 'exists:users,id',
       'payor_payee' => 'string|max:100',
